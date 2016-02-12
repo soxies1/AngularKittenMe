@@ -1,0 +1,121 @@
+body{
+	margin: 0;
+	font-family: 'Amatic SC', cursive;
+	height: 100%;
+
+	/*font-family: 'Indie Flower', cursive;*/
+}
+
+hr{
+	width:70%;
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #A57;
+    margin: 1em auto;
+    padding: 0; 
+}
+
+.fuck{
+	background-color: green;
+}
+
+.col-1{
+	width:8.33333333333%;
+}
+.col-2{
+	width:16.6666666667%;
+}
+
+#flipped-column img{
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+}
+
+.col-8{
+	width:66.6666666667%;
+}
+.col-1, .col-2, .col-8{
+	float: left;
+}
+
+.flip-horizontal {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+}
+
+.cat-column{
+	width:100%;
+	margin-bottom: -4px;
+}
+
+#title-cloud{
+	
+}
+.cloud{
+	top: -127px;
+    left: 371px;
+}
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+h1 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+.main{
+	min-height: 1176px;
+}
+
+#ninety-rotate{
+	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.main-cloud{
+	width: 148%;
+	margin-left:-205px;
+	margin-top:40px;
+}
+
+.content-holder{
+	position: absolute;
+	top: 0;
+	left:0;
+	text-align: center;
+	width:100%;
+	margin:0 auto;
+}
+
+.main-holder{
+	position: relative;
+}
+
+.pic-title{
+	margin-top: -132px;
+}
+
+#selected-pic{
+width:50%;
+border-radius: 10px;
+border:1px solid blue;
+}
+
+.container{
+    position:relative;
+}

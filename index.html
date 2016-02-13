@@ -18,7 +18,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/x-icon" href="http://clipartist.net/links/clipartist.net/kitty_icon_pitr-999px.png" />
 	
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    
     <!-- /*$('.fb-share-button').on('click', function() {
         $('meta[name=randomImage]').remove();
@@ -82,43 +82,21 @@
             .then(null, console.error.bind(console));
     </script>
 
-  <script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
-  
-  <script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
- 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-  
-  
+    <script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
+
+    <script type="text/javascript">
+        function playSound(soundfile) {
+        document.getElementById("dummy").innerHTML=
+            "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+        }
+    </script>
+
   </head>
+  <span id="dummy"></span>
 
   <!-- 3. Display the application -->
   <body>
-    <!-- for facebook share button -->
-    <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    
     
     <my-app>Loading...</my-app>
   </body>

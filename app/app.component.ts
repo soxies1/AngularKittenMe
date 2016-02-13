@@ -1,95 +1,43 @@
-import { Component }       from 'angular2/core';
-import {OnInit} from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import {Http, Headers, JSONP_PROVIDERS, URLSearchParams, Jsonp, Request, BaseRequestOptions, Response} from 'angular2/http';
+import { Component, OnInit }       from 'angular2/core';
+import {JSONP_PROVIDERS, URLSearchParams, Jsonp, Request, Response} from 'angular2/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-
 import { ColumnComponent } from './column.component';
-import { RandomcatService } from './randomcat.service';
-
-//import {enableProdMode} from 'angular2/core';
-//enableProdMode();
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/app.component.html',
-  //styleUrls: ['app/app.component.css'],
-  //directives: [ROUTER_DIRECTIVES],
-  providers: [
-    //ROUTER_PROVIDERS,
-    RandomcatService
-  ],
-  
   directives:[
-      ColumnComponent,
-      //RandomcatService
+      ColumnComponent
   ]
 })
-  
-/*@RouteConfig([
-  {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: DashboardComponent,
-    useAsDefault: true
-  },
-  {
-    path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
-  },
-]) */
     
     
 export class AppComponent implements OnInit {
    public title = 'Tour of Heroes';
    public catURL = 'http://i.imgur.com/RN4ixMa.jpg';
    public cats;
+   //public noise = 'Catmeow10.mp3';
    
    constructor(
-      private _randomcatService: RandomcatService,
-      private jsonp: Jsonp) { }
-      
+      private jsonp: Jsonp
+   ) { }
       
       ngOnInit(){
           this.getCat();
-         
       }
-      /*setCat(){
-          console.log("meowmeow");
-          console.log(this._randomcatService.getCat());
-          console.log("again meow meow");
           
-      }*/
-      /*function setCatURL(data){
-              this.catURL = data.items[2]['media']['m'].replace("_m", "_b");
-              console.log("finished");
-              console.log(this.catURL);
-          }*/
-          
-      setCatURL(){
-          //if(this.cats == undefined){
-              
-         // }else{
-             
-          var rnd = Math.floor(Math.random() * this.cats.items.length);
-          this.catURL = this.cats.items[rnd]['media']['m'].replace("_m", "_b");
-              console.log("finished");
-              console.log(this.catURL);
-         // }
+      setCatURL(cats){  
+          var rnd = Math.floor(Math.random() * cats.items.length);
+          var rndnoise = Math.floor(Math.random() * 12);
+          //this.noise = "onclick=\"playSound('CatMeow" + rndnoise + ".mp3');\"";
+          var snd = new Audio("snd/CatMeow" + rndnoise + ".mp3");
+          snd.play();
+          this.catURL = cats.items[rnd]['media']['m'].replace("_m", "_b");
       }
-      
-     
       
       getCat(){
-        //var cats;
         var retValue;
         var promises = [];
         const searchParams = new URLSearchParams();
@@ -98,10 +46,8 @@ export class AppComponent implements OnInit {
         searchParams.set('format', "json");
         
         this.jsonp.request("http://api.flickr.com/services/feeds/photos_public.gne?&jsoncallback=JSONP_CALLBACK", {search:searchParams})
-        .map((res:Response) => res.json()).subscribe( data => { this.cats = data } , err => console.log(err), () => this.setCatURL());
-        
-        //this.setCatURL();
+        .map((res:Response) => res.json())
+        .subscribe((res:Response) => this.setCatURL(res));
     }
-      
     
 }

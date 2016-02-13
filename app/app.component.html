@@ -18,9 +18,24 @@
 		</div>
         
 		<div class="main-holder" >
-			<img src="http://images.clipshrine.com/download/downloadpnglarge/cloud-blue-glossy-sky-15416-large.png" class="main-cloud" id="ninety-rotate">
+			<img src="http://www.clker.com/cliparts/s/t/m/7/t/j/cloud-resize-recolor.svg" class="main-cloud" id="ninety-rotate">
 			<div class="content-holder">
 				<h2 class="pic-title">Meow</h2>
+                <!-- for facebook share button -->
+                <div id="fb-root"></div>
+                <script>
+                    (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_CA/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+                <div class="fb-share-button" data-href="http://www.youhavegottobekitten.me" data-layout="button" style="display:block; margin-bottom:10px;"></div>
+                
+                
+                
                 <div class="container">
                     <a (click)="getCat()">
                         <img [src] = "catURL" id="selected-pic">
@@ -33,7 +48,7 @@
 				<br>
 				
 				<!-- Your share button code -->
-                <div class="fb-share-button" data-href="http://www.youhavegottobekitten.me" data-layout="button"></div>
+                
                 <a class="twitter-share-button"
                     href="https://twitter.com/intent/tweet?text=Hello%20world"
                     data-size="large">

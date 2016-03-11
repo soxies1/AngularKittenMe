@@ -1,9 +1,9 @@
-    <div class="col-2">
+    <!--<div class="col-2">
         <cat-column></cat-column>
-    </div>
+    </div>-->
     
-    
-	<div class="col-8 main" style="background-image:url('https://s-media-cache-ak0.pinimg.com/564x/b8/ef/d1/b8efd1fc6254202db84de5a5e3464cbc.jpg')">
+    <div id="holdz" class="row cat-container">
+	<div class="col-12 main" style="background-image:url('http://i.imgur.com/2Sne0tx.png'); background-size: 100%; height:100%;">
 		<div style="text-align:center;">
 			
 			<div class="image" style="top: -220px;">
@@ -17,48 +17,50 @@
 			
 		</div>
         
-		<div class="main-holder" >
-			<img src="http://www.clker.com/cliparts/s/t/m/7/t/j/cloud-resize-recolor.svg" class="main-cloud" id="ninety-rotate">
+		<div class="main-holder" id="mainid">
+            
 			<div class="content-holder">
-				<h2 class="pic-title">Meow</h2>
-                <!-- for facebook share button -->
-                <div id="fb-root"></div>
-                <script>
-                    (function(d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s); js.id = id;
-                    js.src = "https://connect.facebook.net/en_CA/sdk.js#xfbml=1&version=v2.5";
-                    fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));
-                </script>
-                <div class="fb-share-button" data-href="http://www.youhavegottobekitten.me" data-layout="button" style="display:block; margin-bottom:10px;"></div>
-                
-                
-                
-                <div class="container">
-                    <a (click)="getCat()">
-                        <img [src] = "catURL" id="selected-pic">
-                    </a>
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
+				<!--<h2 class="pic-title">Meow</h2>-->
+                <!--<input [(ngModel)]="keyword" placeholder="keyword">-->
               
 				<br>
-				
-				<!-- Your share button code -->
+                <!--<div class="image">-->
+                    <a class=""
+                        href = "http://www.facebook.com/share.php?u=http://www.youhavegottobekitten.me&title=YouHaveGotToBeKittenMe" target="_blank"
+                        >
+                        <img src="img/FacebookMediaCat.png" alt="Cat Share" style="width:80px;" class="">
+                    </a>
+                <!--</div>-->
                 
-                <a class="twitter-share-button"
-                    href="https://twitter.com/intent/tweet?text=Hello%20world"
-                    data-size="large">
-                    <img src="https://foodstirs.com/assets/uploads/2015/09/share-twitter-button-01.png" style="width:135px;display: inline-block;">
+                <a (click)="getCat()">
+                    <img src="http://i.imgur.com/zgEGvd7.png" alt="Moar Cats Button" id="cat-btn">
                 </a>
-              
+                <a class="twitter-share-button"
+                    href = "https://twitter.com/intent/tweet?text=So%20meowny%20kittens!!%20http://www.youhavegottobekitten.me"
+                    data-size="large">
+                    <img src="img/TwitterMediaCat.png" alt="Cat Share" style="width:80px;">
+                </a>
+                <br>
+				
+                <!--<div class="fb-share-button" data-href="http://www.youhavegottobekitten.me" data-layout="button"></div>-->
+                <!-- Your share button code -->
+                <!--href="https://twitter.com/intent/tweet?text=Hello%20world"-->
+                
+                
 			</div>
 		</div>
 	</div>
+    </div>
     
-	<div class="col-2" id="flipped-column">
+	<!--<div class="col-2" id="flipped-column">
         <cat-column></cat-column>
-	</div>
+	</div>-->
+    
+    <!--TODO:
+    
+    cursor to cat
+    randomize the keyword
+    
+    
+    
+    -->

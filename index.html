@@ -8,10 +8,13 @@
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="You Have Got To Be Kitten Me" />
 	<meta property="og:description"   content="MEOW MEOW cats cat cats, find and share random pictures of cats!" />
-	<!--<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />-->
-    <!--<meta name="randomImage" property="og:image" content=""/>-->
+	<meta property="og:image" content="http://i.imgur.com/RN4ixMa.jpg" />
+   
     
     <link rel="stylesheet" href="style.css">
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
@@ -92,12 +95,20 @@
     </script>
 
   </head>
-  <span id="dummy"></span>
+ 
 
   <!-- 3. Display the application -->
   <body>
-    
-    
+    <!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+     <span id="dummy"></span>
     <my-app>Loading...</my-app>
   </body>
 

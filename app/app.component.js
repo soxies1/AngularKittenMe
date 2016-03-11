@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/toPromise', 'rxjs/add/operator/map', './column.component'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/toPromise', 'rxjs/add/operator/map', 'mongodb/index.js', './column.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,6 +20,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/toPromise'
             },
             function (_1) {},
             function (_2) {},
+            function (_3) {},
             function (column_component_1_1) {
                 column_component_1 = column_component_1_1;
             }],
@@ -30,24 +31,57 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/toPromise'
                     this.jsonp = jsonp;
                     this.title = 'Tour of Heroes';
                     this.catURL = 'http://i.imgur.com/RN4ixMa.jpg';
+                    this.keyword = "kitten";
+                    this.testvar = 0;
+                    this.kittenKeyWords = [
+                        "kitten",
+                        "kittens",
+                        "kittys",
+                        "meow",
+                        "kitty",
+                        "kitties"
+                    ];
                 }
                 AppComponent.prototype.ngOnInit = function () {
                     this.getCat();
+                    var mong = require("mongodb");
                 };
                 AppComponent.prototype.setCatURL = function (cats) {
                     var rnd = Math.floor(Math.random() * cats.items.length);
-                    var rndnoise = Math.floor(Math.random() * 12);
+                    var noisewill = Math.floor(Math.random() * 100);
+                    var rndnoise = Math.floor(Math.random() * 4);
                     //this.noise = "onclick=\"playSound('CatMeow" + rndnoise + ".mp3');\"";
                     var snd = new Audio("snd/CatMeow" + rndnoise + ".mp3");
-                    snd.play();
+                    if (noisewill > 75) {
+                        snd.play();
+                    }
+                    //this.twitterhandle = "https://twitter.com/intent/tweet?text="
                     this.catURL = cats.items[rnd]['media']['m'].replace("_m", "_b");
+                    document.getElementById("holdz").setAttribute("style", "background-image: url('" + this.catURL + "');");
+                    this.twitterhandle = "https://twitter.com/intent/tweet?text=" + this.catURL;
+                    //var test = document.getElementById("testing");
+                    //test.innerHTML = "<h2>Holy cow " + this.testvar + "</h2>";
+                    //this.testvar = this.testvar + 1;
+                    //var meta = document.getElementById("metaimage");
+                    var foo = document.getElementById("mainid");
+                    foo.setAttribute("style", "background-image: " + this.catURL);
+                    var metas = document.getElementsByTagName('meta');
+                    for (var i = 0; i < metas.length; i++) {
+                        if (metas[i].getAttribute("name") == "imagetag") {
+                            metas[i].setAttribute("content", this.catURL);
+                            break;
+                        }
+                    }
                 };
                 AppComponent.prototype.getCat = function () {
                     var _this = this;
                     var retValue;
                     var promises = [];
+                    var keywordNum = Math.floor(Math.random() * this.kittenKeyWords.length);
+                    this.keyword = this.kittenKeyWords[keywordNum];
+                    console.log(this.keyword);
                     var searchParams = new http_1.URLSearchParams();
-                    searchParams.set('tags', "kitten");
+                    searchParams.set('tags', this.keyword);
                     searchParams.set('tagmode', "any");
                     searchParams.set('format', "json");
                     this.jsonp.request("http://api.flickr.com/services/feeds/photos_public.gne?&jsoncallback=JSONP_CALLBACK", { search: searchParams })

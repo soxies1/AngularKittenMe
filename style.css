@@ -2,6 +2,8 @@ body{
 	margin: 0;
 	font-family: 'Amatic SC', cursive;
 	height: 100%;
+    background-image: url('https://media.giphy.com/media/102e3GeB5j4Mzm/giphy.gif');
+    
 
 	/*font-family: 'Indie Flower', cursive;*/
 }
@@ -19,7 +21,9 @@ hr{
 .fuck{
 	background-color: green;
 }
-
+.row {
+    overflow: auto;
+}
 .col-1{
 	width:8.33333333333%;
 }
@@ -52,6 +56,15 @@ hr{
     filter: fliph; /*IE*/
 }
 
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: flipv; /*IE*/
+    filter: flipv; /*IE*/
+}
+
 .cat-column{
 	width:100%;
 	margin-bottom: -4px;
@@ -76,7 +89,7 @@ h1 {
    width: 100%; 
 }
 .main{
-	min-height: 1156px;
+	/*min-height: 1156px;*/
 }
 
 #ninety-rotate{
@@ -95,7 +108,7 @@ h1 {
 
 .content-holder{
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	left:0;
 	text-align: center;
 	width:100%;
@@ -104,10 +117,13 @@ h1 {
 
 .main-holder{
 	position: relative;
+    height:50%;
 }
 
+
+
 .pic-title{
-	margin-top: -132px;
+	margin-top: -200px;
 }
 
 #selected-pic{
@@ -116,6 +132,48 @@ border-radius: 10px;
 border:1px solid #4099FF;
 }
 
+#selected-pic:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
 .container{
     position:relative;
+}
+
+.cat-container{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+#cat-btn{
+    width: 280px;
+    border-radius: 10px;
+    border: #FF69B4 2px solid;
+    box-shadow: 0 6px rgba(140,140,140, 0.7);    
+}
+
+#cat-btn:active{
+    transform: translateY(4px);
+    box-shadow: 0 3px rgba(100,100,100, 0.7);
+}
+
+a:hover{
+    cursor: url('img/catpawcursor.png') 17.5 17.5, auto;
+}
+
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+#twitter-icon{
+   position: absolute; 
+   top: 20px; 
+   left: 0; 
+   width: 100%;
 }
